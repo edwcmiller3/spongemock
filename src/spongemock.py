@@ -6,4 +6,12 @@ def mock_text(user_text):
         user_text_list[i] = user_text_list[i].upper()
     return ''.join(user_text_list)
 
-mock_text('this is a test')
+def format_input(user_text):
+    special_chars = [(index, char) for index, char in enumerate(user_text) if not char.isalpha()]
+
+# def main():
+#     user_text = input("Enter text to mock: ")
+#     mock_text(user_text)
+
+# if __name__ == "__main__":
+#     main()
