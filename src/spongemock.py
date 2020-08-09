@@ -1,3 +1,6 @@
+import argparse
+import pyperclip
+
 def mock_text(user_text):
     user_text_list = list(user_text.lower())
     for i in range(0, len(user_text_list), 2):
@@ -10,9 +13,4 @@ def format_input(user_text):
     special_chars = [(index, char) for index, char in enumerate(user_text) if not char.isalpha()]
     user_text_list = [letter for letter in user_text if letter.isalpha()]
     return user_text_list, special_chars
-# def main():
-#     user_text = input("Enter text to mock: ")
-#     mock_text(user_text)
 
-# if __name__ == "__main__":
-#     main()
