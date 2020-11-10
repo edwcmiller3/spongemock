@@ -10,15 +10,19 @@ import argparse, pyperclip
 
 # TODO: Refactor original function to use format_input
 def mock_text(user_text):
+    # fuck with chars here
+    # then combine into a string
+    # ''.join([i[1] for i in sorted(chars + special)])
     pass
 
-def format_input(user_text):
-    special_chars = [(index, char) for index, char in enumerate(user_text) if not char.isalpha()]
-    user_text_list = [letter for letter in user_text if letter.isalpha()]
-    return user_text_list, special_chars
+def enum_non_alpha(user_text):
+    return [(index, char) for index, char in enumerate(user_text) if not char.isalpha()]
+
+def enum_alpha(user_text):
+    return [(index, char) for index, char in enumerate(user_text) if char.isalpha()]
 
 def main():
-    # print(mock_text(args.user_text))
+    print(mock_text(args.user_text))
     pass
 
 parser = argparse.ArgumentParser(prog='spongemock.py')
